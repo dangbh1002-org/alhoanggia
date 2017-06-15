@@ -1,0 +1,22 @@
+<section id="adminSection" ng-controller="adminController" ng-cloak>
+
+    <video width="400" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        Your browser does not support HTML5 video.
+    </video>
+    
+    <!--<img src="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" alt="">-->
+    
+    <header id="header">
+        <h1>Admin</h1>
+    </header>
+
+    <section>
+        <div ng-repeat="item in list">
+            {{item}}
+        </div>
+
+    </section>
+
+</section>
