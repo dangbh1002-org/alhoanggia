@@ -40,28 +40,29 @@ module.exports = function (grunt) {
         },
 
         watch: {
-            options: {
-                livereload: true
-            },
-            gruntfile:{
-                files: [
-                    './gruntfile.js'
-                ]
-            },
             clientViews: {
                 files: [
                     'public/**/*.html'
-                ]
+                ],
+                options: {
+                    livereload: true
+                }
             },
             clientJS: {
                 files: [
-                    'public/**/*.js'
+                    'public/modules/**/*.js'
                 ],
-                tasks: ['build']
+                tasks: ['build'],
+                options: {
+                    livereload: true
+                }
             },
             clientCSS: {
                 files: 'public/assets/*.css',
-                tasks: ['build']
+                tasks: ['build'],
+                options: {
+                    livereload: true
+                }
             }
         }
     });
@@ -82,6 +83,8 @@ module.exports = function (grunt) {
     });
 
     // Lint CSS and JavaScript files.
-    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'watch']);
+    grunt.registerTask('build', ['concat', 'cssmin', 'uglify']);
+
+    grunt.registerTask('default', ['build', 'watch']);
 
 };
