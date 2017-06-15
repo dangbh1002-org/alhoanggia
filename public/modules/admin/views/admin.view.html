@@ -1,22 +1,105 @@
-<section id="adminSection" ng-controller="adminController" ng-cloak>
 
-    <video width="400" controls>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
-        Your browser does not support HTML5 video.
-    </video>
-    
-    <!--<img src="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" alt="">-->
-    
-    <header id="header">
-        <h1>Admin</h1>
-    </header>
 
-    <section>
-        <div ng-repeat="item in list">
-            {{item}}
+
+<section class="container" ng-controller="AdminController">
+
+    <div class="row" style="margin-top:20px" ng-show="!auth || user.isAdmin">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <div class="portlet light">
+                <form role="form" ng-submit="signIn()">
+                    <fieldset>
+                        <h2>{{user.isAdmin?'Administrator':'Please Sign In'}}</h2>
+                        <hr class="colorgraph">
+                        <div class="form-group" ng-show="user.isAdmin">
+                            <input type="text" name="displayName" id="displayName" class="form-control input-lg" placeholder="Display Name" ng-model="displayName">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" ng-model="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" ng-model="password">
+                        </div>
+                        <span class="button-checkbox">
+                            <button type="button" class="btn" data-color="info" disabled> <i class="fa fa-check"></i> Remember Me</button>
+                            <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+                            <a href="" class="btn btn-link pull-right" ng-click="resetPassword()">
+                                <span>Forgot Password?</span>
+                                <md-tooltip>Reset now</md-tooltip>
+                            </a>
+                        </span>
+                        <hr class="colorgraph">
+
+                        <div class="row">
+                            <div class="col-md-12" style="margin-bottom: 10px" ng-show="loginMessage">
+                                <span ng-style="{'color':loginError?'red':'purple'}">{{loginMessage}}</span>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <a href="" class="btn btn-lg btn-primary btn-block" ng-click="createUser()" ng-disabled="!user.isAdmin">Register</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <br>
+            </div>
+
+            <div class="portlet light" ng-show="accList.length">
+                <div class="portlet-title">
+
+                    <div class="caption font-dark">
+                        <i class="icon-settings font-dark"></i>
+                        <span class="caption-subject bold uppercase">List acc</span>
+                    </div>
+                    <div class="tools" ng-if="isIndeterminate() || isChecked()">
+                    </div>
+                </div>
+
+                <div class="portlet-body">
+
+                    <table id="accList" class="table table-bordered table-hover .table-condensed" style="border: 1px solid #ccc">
+                        <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Email</th>
+                            <th>Server token</th>
+                            <th>Client token</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in accList track by $index">
+                            <td>{{$index + 1}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.serverToken}}...</td>
+                            <td>{{item.clientToken}}...</td>
+
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
         </div>
+    </div>
 
-    </section>
+    <div class="row" ng-if="auth">
+        <div class="col-md-12">
 
+            <div class="m-heading-1 border-green m-bordered" style="padding-bottom: 50px">
+                <h1 class="page-title">&nbsp;</h1>
+                <h1 style="text-transform: uppercase;text-align: center; color:purple"><strong>Pages Ranking</strong></h1>
+                <p class="text-center" style="letter-spacing: 6px;font-weight: 300;font-size: 14px;padding-left: 8px;margin-top: -6px;">designed by brian dhang</p>
+                <p>Display name: <b>{{auth.displayName}}</b></p>
+                <p>Email: <b>{{auth.email}}</b></p>
+                <div class="dt-buttons" style="margin-top:5px">
+                    <a class="btn dark btn-outline purple" ng-click="signOut()">
+                        <span>Sign out</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>

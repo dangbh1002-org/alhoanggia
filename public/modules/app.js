@@ -23,7 +23,7 @@ var ApplicationConfiguration = (function () {
         angular.module(moduleName, dependencies || []);
 
         // Add the module to the AngularJS configuration file
-        angular.module(applicationModuleName,[]).requires.push(moduleName);
+        angular.module(applicationModuleName, []).requires.push(moduleName);
     };
 
     return {
@@ -41,10 +41,10 @@ angular.element(document).ready(function () {
     }
 
     //Then init the app
-    angular.bootstrap(document, ['main','admin', 'product']); //add module here
+    angular.bootstrap(document, ['main', 'admin', 'product']); //add module here
 });
 
-ApplicationConfiguration.registerModule('main',['firebase','ngRoute']); //add dependencies here
+ApplicationConfiguration.registerModule('main', ['firebase', 'ngRoute', 'ngMaterial']); //add dependencies here
 
 
 angular.module('main').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

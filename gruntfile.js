@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                 dest: 'public/dist/application.js'
             },
             css: {
-                src: ['public/assets/*.css'],
+                src: ['public/assets/**/*.css'],
                 dest: 'public/dist/application.css'
             }
         },
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                 }
             },
             clientCSS: {
-                files: 'public/assets/*.css',
+                files: 'public/assets/**/*.css',
                 tasks: ['build'],
                 options: {
                     livereload: true

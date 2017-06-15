@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('admin').controller('adminController', ['$scope','$location', '$firebaseArray',function TodoCtrl($scope, $location, $firebaseArray) {
+angular.module('admin').controller('AdminController', ['$scope', '$location', '$firebaseArray', '$mdToast', '$timeout', '$http', function TodoCtrl($scope, $location, $firebaseArray) {
 
     var fireRef = firebase.database().ref().child("list");
     $scope.list = $firebaseArray(fireRef);
