@@ -41,22 +41,37 @@ angular.element(document).ready(function () {
     }
 
     //Then init the app
-    angular.bootstrap(document, ['main', 'admin', 'product']); //add module here
+    angular.bootstrap(document, ['main', 'home', 'admin', 'product']); //add module here
 });
 
-ApplicationConfiguration.registerModule('main', ['firebase', 'ngRoute', 'ngMaterial']); //add dependencies here
+ApplicationConfiguration.registerModule('main', ['firebase', 'ngRoute', 'ngMaterial', 'ngFileUpload', 'highcharts-ng']); //add dependencies here
 
 
 angular.module('main').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl: "modules/home/views/home.view.html"
+        })
         .when('/admin', {
             templateUrl: "modules/admin/views/admin.view.html"
         })
-        .when('/product2', {
+        .when('/cong-nhom-duc', {
+            templateUrl: "modules/product/views/product.view.html"
+        })
+        .when('/hang-rao', {
+            templateUrl: "modules/product/views/product.view.html"
+        })
+        .when('/ban-cong', {
+            templateUrl: "modules/product/views/product.view.html"
+        })
+        .when('/bong-gio', {
+            templateUrl: "modules/product/views/product.view.html"
+        })
+        .when('/cau-thang', {
             templateUrl: "modules/product/views/product.view.html"
         })
         .otherwise({
-            redirectTo: '/admin'
+            redirectTo: '/'
         });
     $locationProvider.html5Mode(true);
 }]);

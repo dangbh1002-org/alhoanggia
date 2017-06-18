@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                 dest: 'public/dist/application.js'
             },
             css: {
-                src: ['public/assets/**/*.css'],
+                src: ['public/assets/css/*.css'],
                 dest: 'public/dist/application.css'
             }
         },
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                 }
             },
             clientCSS: {
-                files: 'public/assets/**/*.css',
+                files: 'public/assets/css/*.css',
                 tasks: ['build'],
                 options: {
                     livereload: true
@@ -84,7 +84,8 @@ module.exports = function (grunt) {
 
     // Lint CSS and JavaScript files.
     grunt.registerTask('build', ['concat', 'cssmin', 'uglify']);
-
-    grunt.registerTask('default', ['build', 'watch']);
+    grunt.registerTask('pro', ['build', 'watch']);
+    grunt.registerTask('dev', ['concat', 'watch']);
+    grunt.registerTask('default', ['dev']);
 
 };

@@ -1,9 +1,8 @@
 
-
-
-<section class="container" ng-controller="AdminController">
+<div class="container" ng-controller="AdminController" ng-init="init()">
 
     <div class="row" style="margin-top:20px" ng-show="!auth || user.isAdmin">
+        <!--<div class="row" style="margin-top:20px" ng-show="!auth">-->
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
             <div class="portlet light">
                 <form role="form" ng-submit="signIn()">
@@ -63,20 +62,14 @@
                         <tr>
                             <th>Rank</th>
                             <th>Email</th>
-                            <th>Server token</th>
-                            <th>Client token</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat="item in accList track by $index">
                             <td>{{$index + 1}}</td>
                             <td>{{item.email}}</td>
-                            <td>{{item.serverToken}}...</td>
-                            <td>{{item.clientToken}}...</td>
-
                         </tr>
                         </tbody>
-
                     </table>
                 </div>
             </div>
@@ -88,9 +81,10 @@
         <div class="col-md-12">
 
             <div class="m-heading-1 border-green m-bordered" style="padding-bottom: 50px">
-                <h1 class="page-title">&nbsp;</h1>
-                <h1 style="text-transform: uppercase;text-align: center; color:purple"><strong>Pages Ranking</strong></h1>
-                <p class="text-center" style="letter-spacing: 6px;font-weight: 300;font-size: 14px;padding-left: 8px;margin-top: -6px;">designed by brian dhang</p>
+                <h1 class="colorgraph">&nbsp;</h1>
+                <h1 class="page-title"><strong>Trang quản trị</strong></h1>
+                <p class="text-center page-subTitle">designed by brian dhang</p>
+
                 <p>Display name: <b>{{auth.displayName}}</b></p>
                 <p>Email: <b>{{auth.email}}</b></p>
                 <div class="dt-buttons" style="margin-top:5px">
@@ -102,4 +96,187 @@
 
         </div>
     </div>
-</section>
+
+
+    <div class="row" ng-show="auth && !auth.emailVerified">
+        <div class="col-md-12">
+            <span>Your email has not been verified</span>
+        </div>
+    </div>
+
+
+    <div class="row" ng-show="auth">
+        <div class="col-md-6">
+
+            <form class="portlet light form-horizontal" name="myForm">
+                <fieldset>
+                    <h3><span>Upload sản phẩm</span></h3>
+
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10">
+                            <span style="color: red" ng-show="errorMsg">(*) Error: {{errorMsg}}</span>
+                            <span style="color: red" ng-show="myForm.file.$error.maxSize">(*) Error: File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</span>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback" ng-class="{'has-error': !productName}">
+                        <label class="col-sm-2 control-label" for="productName">Tên:</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" name="productName" class="form-control" id="productName" placeholder="VD: Cầu thang" ng-model="productName" size="31" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true" style="color: #26c281"
+                                  ng-class="{'glyphicon-ok': !myForm.productName.$error.required}"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback" ng-class="{'has-error': !productPrice}">
+                        <label class="col-sm-2 control-label" for="productPrice">Giá:</label>
+
+                        <div class="col-sm-10">
+                            <input name="productPrice" class="form-control" id="productPrice" placeholder="VD: 250,000" ng-model="productPrice" validate-number="productPrice = ''" size="31" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true" style="color: #26c281"
+                                  ng-class="{'glyphicon-ok': productPrice}"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group has-feedback" style="margin-bottom: 0">
+                        <label class="col-sm-2 control-label"></label>
+
+                        <div class="col-sm-10" style="margin-bottom: 7px">
+
+                            <div class="dt-buttons">
+
+                                <md-input-container style="margin: 0">
+                                    <md-select ng-model="productType" placeholder="Phân loại" required>
+                                        <md-option><em>None</em></md-option>
+                                        <md-option ng-repeat="type in productTypeList" ng-value="type.code">
+                                            {{type.name}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <input class="ng-hide" id="input-file-id" type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile">
+
+                                <label for="input-file-id" class="btn dark yellow" style="margin: 0">Chọn ảnh</label>
+
+                                <a class="btn dark btn-outline red" ng-click="picFile = null" ng-show="picFile">
+                                    <span>Xóa</span>
+                                </a>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-6" style="margin-bottom: 7px">
+
+                            <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
+                            <div class="progress" style="" ng-show="myForm.file.$valid">
+                                <div class="progress-bar" role="progressbar" ng-style="{ 'width': picFile.progress + '%' }" style="width: 0;transition: width 0.5s"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-show="picFile">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10">
+                            <div class="dt-buttons">
+                                <button class="btn dark btn-outline purple" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)">
+                                    <span>Submit</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+                <br>
+            </form>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="portlet light">
+                <h3><span>Thống kê sản phẩm</span></h3>
+
+                <highchart id="chart1" config="chartConfig" class="span10" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" ng-if="auth">
+        <div class="col-md-12">
+            <div class="portlet light">
+
+                <h3><span>Danh sách sản phẩm</span></h3>
+
+                <table id="productList" class="table table-bordered table-hover .table-condensed" style="border: 1px solid #ccc">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Vị trí</th>
+                        <th class="text-center">Ảnh</th>
+                        <th class="text-center">Tên sản phẩm</th>
+                        <th class="text-center">Giá</th>
+                        <th class="text-center">Phân loại</th>
+                        <th class="text-center">Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in productList">
+                        <td>
+                            <span ng-show="!item.editing">{{item.position}}</span>
+                            <input type="text" class="edit" ng-model="item.position"
+                                   ng-if="item.editing" todo-escape="revertEditing(item)">
+
+                        </td>
+                        <td>
+                            <div ng-repeat="(key, image) in item.images" ng-if="key == 0">
+                                <img src="{{image.url}}" alt="" height="50px">
+                            </div>
+                        </td>
+                        <td>
+                            <span ng-show="!item.editing">{{item.name}}</span>
+                            <input type="text" class="edit" ng-model="item.name"
+                                   ng-if="item.editing" todo-escape="revertEditing(item)">
+                        </td>
+                        <td class="text-right">
+                            <span ng-show="!item.editing">{{item.price}}</span>
+                            <input type="text" class="edit" ng-model="item.price"
+                                   ng-if="item.editing" todo-escape="revertEditing(item)" validate-number="item.price = ''">
+                        </td>
+                        <td>
+                            <span ng-show="!item.editing">{{productTypeObject[item.type]}}</span>
+                            <md-input-container style="margin: 0" ng-if="item.editing">
+                                <md-select ng-model="item.type" placeholder="Phân loại" required>
+                                    <md-option ng-repeat="type in productTypeList" ng-value="type.code">
+                                        {{type.name}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn dark btn-outline" ng-class="{'yellow':!item.editing, 'blue':item.editing}" ng-click="item.editing?doneEditing(item):edit(item)">
+                                <span>{{item.editing?'Xong':'Chỉnh sửa'}}</span>
+                            </a>
+                            <a class="btn dark btn-outline" ng-class="{'red':!item.editing, 'yellow':item.editing}" ng-click="item.editing?revertEditing(item):delete(item)">
+                                <span>{{item.editing?'Quay lại':'Xóa'}}</span>
+                            </a>
+                        </td>
+                        <!--<td ng-repeat="y in item.cookies">{{y.name}}</td>-->
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+

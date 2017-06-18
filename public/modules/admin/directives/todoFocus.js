@@ -4,7 +4,7 @@
  * Directive that places focus on the element it is applied to when the expression it binds to evaluates to true
  */
 
-angular.module('admin').directive('todoFocus', [ function todoFocus($timeout) {
+angular.module('admin').directive('todoFocus', ['$timeout', function todoFocus($timeout) {
     return function(scope, elem, attrs) {
         scope.$watch(attrs.todoFocus, function (newVal) {
             if (newVal) {

@@ -1,5 +1,5 @@
 body{
-  background #f1f1f1
+  background none
   font-family: 'Roboto', sans-serif;
 }
 
@@ -31,4 +31,58 @@ h1.page-title{
   font-size: 14px;
   padding-left: 8px;
   margin-top: -6px;
+}
+
+.thumb {
+  background-color: #f3f3f3;
+  border: 1px solid #c3c3c3;
+  width: 250px;
+}
+
+.progress {
+  width: 250px;
+  height 7px
+  margin-bottom 0
+}
+
+.md-input-container {
+  margin 0 !important
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+  display: inline;
+  padding: 0;
+  border 0
+  &:hover{
+    border 0
+  }
+}
+
+.edit {
+  position: relative;
+  color: inherit;
+  background-color: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: rgb(63,81,181);
+  &:focus{
+    outline none
+  }
+}
+
+
+.portlet.light{
+  & h3{
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+    & span{
+      border-bottom: 5px solid purple;
+      transition letter-spacing 1s ease
+      &:hover{
+        letter-spacing 1px
+        transition letter-spacing 1s ease
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('product').controller('ProductController',['$scope','$location','$firebaseArray', function TodoCtrl($scope, $location, $firebaseArray) {
+angular.module('product').controller('HomeController',['$scope','$location','$firebaseArray', function TodoCtrl($scope, $location, $firebaseArray) {
 
     $scope.loadProductList = function () {
         $scope.productListRef = firebase.database().ref().child("products/");
