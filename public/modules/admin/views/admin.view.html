@@ -1,5 +1,8 @@
 
 <div class="container" ng-controller="AdminController" ng-init="init()">
+
+    <div style="height: 48px"></div>
+
     <div class="row" style="margin-top:20px" ng-show="!auth || user.isAdmin">
         <!--<div class="row" style="margin-top:20px" ng-show="!auth">-->
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -151,7 +154,7 @@
                                 <md-input-container style="margin: 0">
                                     <md-select ng-model="productType" placeholder="Phân loại" required>
                                         <md-option><em>None</em></md-option>
-                                        <md-option ng-repeat="type in productTypeList" ng-value="type.code">
+                                        <md-option ng-repeat="type in menus" ng-value="type.code">
                                             {{type.name}}
                                         </md-option>
                                     </md-select>
@@ -251,10 +254,10 @@
                                    ng-if="item.editing" todo-escape="revertEditing(item)" validate-number="item.price = ''">
                         </td>
                         <td>
-                            <span ng-show="!item.editing">{{productTypeObject[item.type]}}</span>
+                            <span ng-show="!item.editing">{{mapCode2Name[item.type]}}</span>
                             <md-input-container style="margin: 0" ng-if="item.editing">
                                 <md-select ng-model="item.type" placeholder="Phân loại" required>
-                                    <md-option ng-repeat="type in productTypeList" ng-value="type.code">
+                                    <md-option ng-repeat="type in menus" ng-value="type.code">
                                         {{type.name}}
                                     </md-option>
                                 </md-select>

@@ -3,20 +3,23 @@
 <head>
     <base href="/">
     <meta charset="utf-8">
+    <meta name="304Fix" content="safari-fix">
 
-    <!--<meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />-->
-    <!--<meta property="og:type"               content="article" />-->
-    <!--<meta property="og:title"              content="When Great Minds Don’t Think Alike" />-->
-    <!--<meta property="og:description"        content="How much does culture influence creative thinking?" />-->
-    <!--<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />-->
+    <!--<meta property="og:url"              content="{{ngMeta['og:url']}}" />-->
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="AL Hoang Gia" />
+    <meta property="og:description"        content="Sưởng đúc nhôm lớn nhất miền Bắc. Mang lại sự sang trọng cho công trình biệt thự nhà bạn." />
+    <meta property="og:image"              content="https://alhoanggia-4d183.firebaseapp.com/assets/img/cong-nhom-duc-cover.png" />
 
-    <title>AL Hoang Gia</title>
+    <title>AL Hoang Gia | {{mapPath2Name[location.path()]}}</title>
+    <meta name="description" content="Sưởng đúc nhôm lớn nhất miền Bắc. Mang lại sự sang trọng cho công trình biệt thự nhà bạn.">
     <link rel="icon" href="assets/img/favicon.ico" type="image/gif" sizes="16x16">
 
     <!--Libs style-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
           rel="stylesheet">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bower/angular-block-ui/dist/angular-block-ui.min.css">
     <link rel="stylesheet" href="assets/libs/angular-material.min.css">
     <link rel="stylesheet" href="assets/libs/metronic/components-md.min.css">
     <link rel="stylesheet" href="assets/bower/bootstrap/dist/css/bootstrap.min.css">
@@ -34,7 +37,12 @@
 </head>
 <body ng-cloak>
 
+
+<menu-directive></menu-directive>
+
 <ng-view></ng-view>
+
+<footer-directive></footer-directive>
 
 <!--Libs script-->
 <script src="//localhost:35729/livereload.js"></script>
@@ -43,6 +51,7 @@
 <script src="assets/libs/datatables/datatables.bootstrap.js"></script>
 <script src="assets/bower/firebase/firebase.js"></script>
 <script src="assets/bower/angular/angular.min.js"></script>
+<script src="assets/bower/angular-block-ui/dist/angular-block-ui.min.js"></script>
 <script src="assets/bower/angular-animate/angular-animate.min.js"></script>
 <script src="assets/bower/angular-aria/angular-aria.min.js"></script>
 <script src="assets/bower/angular-messages/angular-messages.min.js"></script>

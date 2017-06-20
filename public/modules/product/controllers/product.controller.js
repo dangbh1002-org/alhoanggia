@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('product').controller('ProductController',['$scope','$location','$firebaseArray', function TodoCtrl($scope, $location, $firebaseArray) {
+angular.module('product').controller('ProductController',['$scope', '$rootScope', '$location','$firebaseArray', '$timeout', '$mdMedia', '$mdDialog', function($scope, $rootScope, $location, $firebaseArray, $timeout, $mdMedia, $mdDialog) {
 
     $scope.loadProductList = function () {
         $scope.productListRef = firebase.database().ref().child("products/");
@@ -14,11 +14,12 @@ angular.module('product').controller('ProductController',['$scope','$location','
                 $scope.auth = auth;
                 $scope.accList = [];
                 $scope.productList = [];
+
             });
 
-            if (auth) {
+            $scope.loadProductList();
 
-                $scope.loadProductList();
+            if (auth) {
 
                 var userRef = firebase.database().ref().child('users/' + $scope.auth.uid);
                 userRef.on('value', function (snapshot) {
@@ -31,15 +32,41 @@ angular.module('product').controller('ProductController',['$scope','$location','
             }
         });
     };
+    $scope.setProductType = function () {
 
-    $scope.init = function () {
-
-        $scope.getAuth();
+        $scope.mapPath2Type = {};
+        angular.forEach($scope.menus, function (value, key) {
+            $scope.mapPath2Type[value.path] = value.code;
+        });
 
     };
 
-    if ($location.path() === '') {
-        $location.path('/');
-    }
-    $scope.location = $location;
+    $scope.viewProduct = function(ev, images) {
+        $rootScope.productViewImages = images;
+        $mdDialog.show({
+            controller: function($scope, $rootScope) {
+                $scope.productViewImages = $rootScope.productViewImages;
+                $scope.imageHeight = window.innerHeight;
+            },
+            templateUrl: 'modules/product/templates/dialog1.tmpl.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        })
+            .then(function(answer) {
+                $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+                $scope.status = 'You cancelled the dialog.';
+            });
+    };
+
+    $scope.init = function () {
+        $scope.getAuth();
+        $scope.setProductType();
+        $scope.videoHeight = window.innerHeight;
+
+    };
+
+
 }]);

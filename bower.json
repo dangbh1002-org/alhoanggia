@@ -23,6 +23,8 @@
     "angular-messages": "1.6.4",
     "angular-route": "1.6.4",
     "firebase": "4.1.2",
-    "angularfire": "2.3.0"
+    "angularfire": "2.3.0",
+    "angular-block-ui": "^0.2.2",
+    "angular-update-meta": "^2.0.1"
   }
 }

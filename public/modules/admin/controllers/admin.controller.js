@@ -225,11 +225,12 @@ angular.module('admin').controller('AdminController', [
                     $scope.productList.$watch(function (res) {
                         if(res.event === 'child_added' || res.event === 'child_removed'){
                             $("#productList").DataTable().clear().destroy();
+                            $scope.reloadDataTable();
                         }
-                        if(res.event === 'child_changed'){
-                            $("#productList").DataTable().destroy();
-                        }
-                        $scope.reloadDataTable();
+                        // if(res.event === 'child_changed'){
+                        //     $("#productList").DataTable().destroy();
+                        // }
+
                         $scope.reDrawChart();
                     });
 
@@ -363,7 +364,7 @@ angular.module('admin').controller('AdminController', [
             $scope.dataObject = {};
 
             //init object
-            angular.forEach($scope.productTypeList, function (item, key) {
+            angular.forEach($scope.menus, function (item, key) {
                 $scope.dataObject[item.code] = 0;
             });
 
@@ -374,7 +375,7 @@ angular.module('admin').controller('AdminController', [
 
             //mapping
             angular.forEach($scope.dataObject, function (value, key) {
-                $scope.data.push({name:$scope.productTypeObject[key], y: value});
+                $scope.data.push({name:$scope.mapCode2Name[key], y: value});
             });
 
         };
@@ -384,17 +385,10 @@ angular.module('admin').controller('AdminController', [
             $scope.productName = 'Cổng nhôm đúc';
             $scope.productPrice = '250,000';
 
-            $scope.productTypeList = [
-                {code: 1, name: 'Cổng nhôm đúc'},
-                {code: 2, name: 'Hàng rào'},
-                {code: 3, name: 'Ban công'},
-                {code: 4, name: 'Bông gió'},
-                {code: 5, name: 'Cầu thang'}
-            ];
 
-            $scope.productTypeObject = {};
-            angular.forEach($scope.productTypeList, function (value, key) {
-                $scope.productTypeObject[value.code] = value.name;
+            $scope.mapCode2Name = {};
+            angular.forEach($scope.menus, function (value, key) {
+                $scope.mapCode2Name[value.code] = value.name;
             });
             $scope.initChart();
         };

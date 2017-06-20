@@ -41,10 +41,10 @@ angular.element(document).ready(function () {
     }
 
     //Then init the app
-    angular.bootstrap(document, ['main', 'home', 'admin', 'product']); //add module here
+    angular.bootstrap(document, ['main', 'home', 'admin', 'product', 'menu', 'footer']); //add module here
 });
 
-ApplicationConfiguration.registerModule('main', ['firebase', 'ngRoute', 'ngMaterial', 'ngFileUpload', 'highcharts-ng']); //add dependencies here
+ApplicationConfiguration.registerModule('main', ['firebase', 'ngRoute', 'ngMaterial', 'ngFileUpload', 'highcharts-ng', 'blockUI']); //add dependencies here
 
 
 angular.module('main').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

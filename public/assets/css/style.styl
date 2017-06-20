@@ -1,3 +1,42 @@
+// Prepare for Stylus
+
+
+
+// function
+border-radius()
+  for vendor in vendors
+    if (vendor == official){
+      border-radius: arguments
+    }
+    else {
+      -{vendor}-border-radius: arguments
+    }
+
+fade-out(color, amount = 50%)
+  color - rgba(0,0,0,amount)
+
+
+box-shadow(args...)
+  -webkit-box-shadow args
+  -moz-box-shadow args
+  box-shadow args
+
+
+transition(args...)
+  transition args
+  -webkit-transition args
+  -moz-transition args
+  -o-transition args
+  -ms-transition args
+  -official-transition args
+
+
+// variables
+vendors = webkit moz o ms official
+shadowColor = rgba(0, 140, 186, 0.5)
+bodyColor = #e5e5e5
+fbColor = #3b5998
+
 body{
   background none
   font-family: 'Roboto', sans-serif;
@@ -72,17 +111,260 @@ h1.page-title{
 }
 
 
-.portlet.light{
-  & h3{
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 5px;
-    & span{
-      border-bottom: 5px solid purple;
+h3{
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 5px;
+  & span{
+    border-bottom: 5px solid purple;
+    transition letter-spacing 1s ease
+    &:hover{
+      letter-spacing 1px
       transition letter-spacing 1s ease
-      &:hover{
-        letter-spacing 1px
-        transition letter-spacing 1s ease
+    }
+  }
+}
+
+.product-group{
+  position: relative
+  margin: 15px auto
+  border-radius(5px)
+  box-shadow(0 1px 1px 0 shadowColor)
+  transition(0.3s)
+  overflow hidden
+  &:hover{
+    box-shadow(0 2px 2px 0 shadowColor)
+  }
+
+  .image-group{
+    width: 100%
+    overflow hidden
+    img{
+      border-radius(6px)
+      width: 100%
+      height 2*@width/3
+    }
+  }
+
+  .info-group{
+    position: absolute
+    width: 100%
+    height: 50px
+    bottom: 0
+    background-color: fade-out(#fff,10%)
+    border-bottom: solid 2px white
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+
+    .info-name{
+      position: absolute
+      bottom: 5%
+      left: 5%
+      h4{
+        color: #727272
+        font-family: 'Roboto', sans-serif
+        font-weight: 300
+        text-transform: capitalize
+        font-size: medium
+      }
+    }
+
+    .info-detail{
+      position: absolute
+      right: 10px
+      top: 10px
+      bottom: 7px
+
+      p{
+        font-family: 'Roboto', sans-serif
+        line-height: 130%
+        margin-top: auto
+        margin-bottom: auto
+        color #727272
+      }
+      .btn2{
+        border: solid 2px
+        border-radius(100px)
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0)
+        transition(1s easy)
       }
     }
   }
+}
+
+.mobileLargeLogo{
+  text-align center
+  &:hover{
+    text-decoration none
+  }
+  img{
+    height 180px
+  }
+  h1{
+    color white
+    font-size 32px
+    margin-top -13px
+    letter-spacing 1px
+    font-weight 700
+  }
+}
+
+.mobileMainMenu{
+  position fixed
+  top 0
+  left 0!important
+  box-shadow 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084)
+  background purple
+  ul{
+    list-style-type none
+    margin-bottom 0
+  }
+  li{
+    float left
+    display block
+    color white
+    text-align center
+    padding 8px 8px 0px 8px
+    text-decoration none
+    a{
+      color white
+      line-height: 32px
+      text-decoration none
+      font-weight 700
+    }
+  }
+
+}
+
+md-toolbar {
+  min-height: 50px;
+  background #3b5998!important
+}
+md-nav-bar{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0
+  z-index: 999;
+  background: fbColor
+  text-align center
+  box-shadow 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084)
+}
+.md-nav-item{
+  outline none
+  height 48px
+  span{
+    color white
+    text-decoration none
+    font-weight 500
+  }
+
+}
+md-nav-ink-bar{
+  color white!important
+  background white!important
+}
+
+
+.banner{
+  position relative
+  background white
+  //border-bottom 2px solid fbColor
+  .container-fluid{
+    padding-right: 0
+    padding-left: 0
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    .fog{
+      margin-top 48px
+      background-color white
+      z-index 2
+      position absolute
+      height 100%
+      width 100%
+      opacity 0.01
+    }
+    .bannerVideo{
+      .video {
+        /*height: 90vh;*/
+
+        overflow: hidden;
+        position: relative
+        z-index: 1;
+        width 100%
+
+        #bgvid {
+          display: block;
+          height: auto;
+          min-width: 100%;
+          min-height: 100%;
+
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -moz-transform: translate(-50%, -50%) scale(1);
+          -ms-transform: translate(-50%, -50%) scale(1);
+          -o-transform: translate(-50%, -50%) scale(1);
+          -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+          width: auto;
+          z-index: 1;
+        }
+      }
+    }
+
+  }
+}
+
+.orderNow{
+
+  p{
+    color white
+    line-height 70px
+    margin 0
+    font-size x-large
+  }
+}
+
+md-dialog.productViewer{
+  overflow hidden
+  background transparent!important
+}
+
+.svgSpace{
+  background-color bodyColor
+  padding 30px 30px
+
+  border-bottom 20px solid fbColor
+  h3{
+    font-weight 900
+    letter-spacing 2px
+  }
+  p{
+    color #777!important
+  }
+  a{
+    text-decoration none
+    .p{
+      font-family 'Roboto', sans-serif
+      font-size x-large
+      font-weight 300
+      color #777
+      letter-spacing 0
+      transition(1s ease)
+    }
+    &:hover{
+      p{
+        letter-spacing 3px
+        transition(1s ease)
+      }
+    }
+  }
+
+}
+
+.productList{
+  margin-bottom 50px
 }

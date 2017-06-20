@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+    <!--Mobile menu-->
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4"
+                ng-hide="largeScreen">
+        <md-toolbar>
+            <a class="mobileLargeLogo" ng-click="location.path('/');close()">
+                <img src="assets/img/logo.svg" alt="">
+                <h1>AL Hoàng Gia</h1>
+            </a>
+        </md-toolbar>
+        <md-list>
+            <md-divider ></md-divider>
+            <md-list-item class="md-2-line" ng-repeat="item in menus" ng-click="location.path(item.path);close()">
+                <img ng-src="assets/img/favicon.ico" class="md-avatar" />
+                <a class="md-list-item-text" style="text-decoration: none">
+                    <h3><strong>{{ item.name }}</strong></h3>
+                    <p>This is description</p>
+                </a>
+                <md-divider ></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <md-toolbar class="md-theme-indigo mobileMainMenu" ng-hide="largeScreen">
+        <ul>
+            <li>
+                <i class="material-icons" ng-click="toggleLeft()" style="font-size: 32px">menu</i>
+            </li>
+            <li>
+                <a ng-href="/" class="mobileBrand" href="/">
+                    AL Hoàng Gia
+                </a>
+            </li>
+        </ul>
+    </md-toolbar>
+
+    <!--Desktop menu-->
+    <div class="container">
+        <md-nav-bar layout="row" layout-align="center"
+                    md-selected-nav-item="currentNavItem"
+                    nav-bar-aria-label="navigation links" ng-show="largeScreen"
+                    style="">
+
+            <img ng-src="assets/img/favicon.ico" class="md-avatar" width="62px" height="62px" style="outline: none" s ng-click="setNavItem('/')">
+
+            <md-nav-item md-nav-click="goto('/')" name="/" ng-click="location.path('/')">
+                Trang chủ
+            </md-nav-item>
+            <md-nav-item ng-repeat="item in menus" md-nav-click="goto" name="{{item.path}}" ng-click="location.path(item.path)">
+                {{item.name}}
+            </md-nav-item>
+        </md-nav-bar>
+    </div>
+
+    <!--<div style="margin-bottom: 50px"></div>-->
+
+</div>

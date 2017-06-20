@@ -1,13 +1,76 @@
-<div class="container" ng-controller="ProductController" ng-init="init()">
 
-    <!--<p>{{auth.displayName}}</p>-->
-    <!--<p>{{auth.email}}</p>-->
 
-    <div class="row">
-        <div class="col-md-12">
+<div ng-controller="ProductController" ng-init="init()">
+
+
+    <div class="productCover">
+
+    </div>
+
+    <div class="banner">
+        <div class="container-fluid">
+            <div class="fog">
+            </div>
+
+            <div class="bannerVideo">
+
+                <div class="video" ng-style="{'height': videoHeight + 'px'}">
+
+                    <img id="bgvid" src="assets/img{{location.path()}}-cover.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center orderNow" ng-style="{'background':mapPath2Color[location.path()]}">
+                <p>Bạn cần được tư vấn? Hãy gọi cho nhân viên hỗ trợ 24/7 của chúng tôi theo số: <strong>(091)2.959.585</strong></p>
+            </div>
+            <div class="text-center">
+                <img src="assets/img/quality.png" alt="">
+                <p class="text-center"><strong>AL Hoàng Gia</strong> cam kết số 1 về chất lượng</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container productList">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <h3><span>{{mapPath2Name[location.path()]}}</span></h3>
+
+            </div>
+
+            <div class="col-md-4" ng-repeat="item in productList | orderBy: 'position' | filter: {'type': mapPath2Type[location.path()]}">
+
+                <div class="product-group" ng-click="viewProduct($event, item.images)">
+                    <a>
+                        <div class="image-group" ng-repeat="(key, image) in item.images" ng-if="key == 0">
+                            <img ng-src="{{image.url}}" set-height class="responsive-img materialboxed">
+                        </div>
+                        <div class="info-group">
+                            <div class="info-name">
+                                <h4>{{item.name}}</h4>
+                            </div>
+                            <div class="info-detail">
+                                <button class="btn2" ng-style="{'border-color':mapPath2Color[location.path()]}">
+                                    <p>{{item.price}}</p>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
 
         </div>
     </div>
+
 
 
 </div>
