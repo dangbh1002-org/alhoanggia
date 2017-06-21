@@ -65,7 +65,7 @@ angular.module('product').controller('ProductController',['$scope', '$rootScope'
         $scope.getAuth();
         $scope.setProductType();
         $scope.videoHeight = window.innerHeight;
-
+        window.scrollTo(0, 0);
     };
 
 

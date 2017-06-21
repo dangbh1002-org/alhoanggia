@@ -1,2 +1,3 @@
+
 ApplicationConfiguration.registerModule('home');
 

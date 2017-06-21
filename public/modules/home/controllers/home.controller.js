@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('product').controller('HomeController',['$scope','$location','$firebaseArray', function($scope, $location, $firebaseArray) {
+angular.module('home').controller('HomeController',['$scope', '$location','$firebaseArray', function($scope, $location, $firebaseArray) {
 
     $scope.loadProductList = function () {
         $scope.productListRef = firebase.database().ref().child("products/");
@@ -12,34 +12,17 @@ angular.module('product').controller('HomeController',['$scope','$location','$fi
 
             $scope.$apply(function () {
                 $scope.auth = auth;
-                $scope.accList = [];
                 $scope.productList = [];
             });
+            $scope.loadProductList();
 
-            if (auth) {
-
-                $scope.loadProductList();
-
-                var userRef = firebase.database().ref().child('users/' + $scope.auth.uid);
-                userRef.on('value', function (snapshot) {
-                    $scope.user = snapshot.val();
-                    if ($scope.user.isAdmin) {
-                        $scope.loadAccList();
-                    }
-                });
-
-            }
         });
     };
 
     $scope.init = function () {
-
         $scope.getAuth();
-
+        $scope.videoHeight = window.innerHeight;
     };
 
-    if ($location.path() === '') {
-        $location.path('/');
-    }
-    $scope.location = $location;
+
 }]);
