@@ -46,6 +46,8 @@ angular.module('product').controller('ProductController',['$scope', '$rootScope'
         $mdDialog.show({
             controller: function($scope, $rootScope) {
                 $scope.productViewImages = $rootScope.productViewImages;
+                // $scope.largeScreen = $rootScope.largeScreen;
+
                 $scope.imageHeight = window.innerHeight;
             },
             templateUrl: 'modules/product/templates/dialog1.tmpl.html',

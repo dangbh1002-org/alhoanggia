@@ -1,3 +1,3 @@
 <md-dialog aria-label="Product Viewer" class="productViewer">
-    <img src="{{productViewImages[0].url}}" alt="" height="{{imageHeight*3/4}}">
+    <img src="{{productViewImages[0].url}}" alt="" ng-style="{'height':largeScreen?imageHeight*3/4:'auto', 'width':largeScreen?'auto':'100%'}">
 </md-dialog>

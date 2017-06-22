@@ -2,7 +2,7 @@
 
     <!--Mobile menu-->
     <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4"
-                ng-hide="largeScreen">
+                ng-hide="largeScreen" style="z-index: 100">
         <md-toolbar>
             <a class="mobileLargeLogo" ng-click="location.path('/');close()">
                 <img src="assets/img/logo.svg" alt="">
@@ -20,7 +20,7 @@
             </md-list-item>
         </md-list>
     </md-sidenav>
-    <md-toolbar class="md-theme-indigo mobileMainMenu" ng-hide="largeScreen">
+    <md-toolbar class="md-theme-indigo mobileMainMenu" ng-hide="largeScreen" style="z-index: 99">
         <ul>
             <li>
                 <i class="material-icons" ng-click="toggleLeft()" style="font-size: 32px">menu</i>
