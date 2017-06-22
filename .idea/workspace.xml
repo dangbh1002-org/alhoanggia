@@ -2,20 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a2bd965-7020-4b33-a49d-d4832c8b52ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/modules/home/services/svgDraw.service.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/img/step4-001.jpg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/home-cover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/step1-001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/step2-001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/step4-001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/step4-002.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/adminBackground.png" afterPath="$PROJECT_DIR$/public/assets/img/adminBackground.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/ban-cong-cover.png" afterPath="$PROJECT_DIR$/public/assets/img/ban-cong-cover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/bong-gio-cover.png" afterPath="$PROJECT_DIR$/public/assets/img/bong-gio-cover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/cau-thang-cover.png" afterPath="$PROJECT_DIR$/public/assets/img/cau-thang-cover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/cong-nhom-duc-cover.png" afterPath="$PROJECT_DIR$/public/assets/img/cong-nhom-duc-cover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/hang-rao-cover.png" afterPath="$PROJECT_DIR$/public/assets/img/hang-rao-cover.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/home-cover.jpg" afterPath="$PROJECT_DIR$/public/assets/img/home-cover.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/quality.png" afterPath="$PROJECT_DIR$/public/assets/img/quality.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step1-002.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step1-002.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step1-003.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step1-003.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step1-004.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step1-004.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step2-001.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step2-001.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-001.png" afterPath="$PROJECT_DIR$/public/assets/img/step3-001.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-002.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-002.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-003.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-003.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-004.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-004.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-005.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-005.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-006.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-006.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-007.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-007.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-008.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-008.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-009.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-009.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step3-010.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step3-010.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step5-001.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step5-001.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step5-002.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step5-002.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step5-003.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step5-003.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step5-004.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step5-004.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step6-001.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step6-001.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step6-002.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step6-002.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step6-003.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step6-003.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/step6-004.jpg" afterPath="$PROJECT_DIR$/public/assets/img/step6-004.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/style.css" afterPath="$PROJECT_DIR$/public/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/style.styl" afterPath="$PROJECT_DIR$/public/assets/css/style.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/modules/admin/controllers/admin.controller.js" afterPath="$PROJECT_DIR$/public/modules/admin/controllers/admin.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/modules/admin/views/admin.view.html" afterPath="$PROJECT_DIR$/public/modules/admin/views/admin.view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/modules/home/controllers/home.controller.js" afterPath="$PROJECT_DIR$/public/modules/home/controllers/home.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/modules/home/views/home.view.html" afterPath="$PROJECT_DIR$/public/modules/home/views/home.view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/modules/menu/directives/menu.directive.js" afterPath="$PROJECT_DIR$/public/modules/menu/directives/menu.directive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/modules/menu/templates/menu.template.html" afterPath="$PROJECT_DIR$/public/modules/menu/templates/menu.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/modules/product/views/product.view.html" afterPath="$PROJECT_DIR$/public/modules/product/views/product.view.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="337">
-              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,8 +65,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="394">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -470,7 +492,7 @@
       <workItem from="1498013248134" duration="254000" />
       <workItem from="1498060493882" duration="17000" />
       <workItem from="1498067978309" duration="16489000" />
-      <workItem from="1498086783805" duration="10374000" />
+      <workItem from="1498086783805" duration="10662000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1497551671796</created>
@@ -521,11 +543,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498013306473</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Done">
+      <created>1498106494298</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1498106494298</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240313000" />
+    <option name="totallyTimeSpent" value="240601000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -572,7 +601,8 @@
     <MESSAGE value="18.Jun" />
     <MESSAGE value="Product page done!" />
     <MESSAGE value="Landing page master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landing page master" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -929,15 +959,15 @@
     <entry file="file://$PROJECT_DIR$/gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="394">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
