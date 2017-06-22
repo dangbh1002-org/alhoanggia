@@ -2,10 +2,10 @@
 
     <!--Mobile menu-->
     <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4"
-                ng-hide="largeScreen" style="z-index: 100">
+                ng-hide="largeScreen" style="z-index: 99999">
         <md-toolbar>
             <a class="mobileLargeLogo" ng-click="location.path('/');close()">
-                <img src="assets/img/logo.svg" alt="">
+                <img src="assets/img/logo-bigWhite.png" alt="">
                 <h1>AL Hoàng Gia</h1>
             </a>
         </md-toolbar>
@@ -20,7 +20,7 @@
             </md-list-item>
         </md-list>
     </md-sidenav>
-    <md-toolbar class="md-theme-indigo mobileMainMenu" ng-hide="largeScreen" style="z-index: 99">
+    <md-toolbar class="md-theme-indigo mobileMainMenu" ng-hide="largeScreen" style="z-index: 9999">
         <ul>
             <li>
                 <i class="material-icons" ng-click="toggleLeft()" style="font-size: 32px">menu</i>
@@ -38,9 +38,9 @@
         <md-nav-bar layout="row" layout-align="center"
                     md-selected-nav-item="currentNavItem"
                     nav-bar-aria-label="navigation links" ng-show="largeScreen"
-                    style="">
+                    style="z-index: 9999">
 
-            <img ng-src="assets/img/favicon.ico" class="md-avatar" width="62px" height="62px" style="outline: none" s ng-click="setNavItem('/')">
+            <img ng-src="assets/img/logo-smallWhite.png" class="md-avatar" width="46" height="46" style="outline: none" s ng-click="setNavItem('/')">
 
             <md-nav-item ng-repeat="item in menus" md-nav-click="goto" name="{{item.path}}" ng-click="location.path(item.path)">
                 {{item.name}}
