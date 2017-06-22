@@ -11,7 +11,7 @@
     <meta property="og:description"        content="Sưởng đúc nhôm lớn nhất miền Bắc. Mang lại sự sang trọng cho công trình biệt thự nhà bạn." />
     <meta property="og:image"              content="https://alhoanggia-4d183.firebaseapp.com/assets/img/cong-nhom-duc-cover.png" />
 
-    <title>AL Hoang Gia | {{mapPath2Name[location.path()]}}</title>
+    <title>AL Hoang Gia{{location.path() !== '/'? ' | ' + mapPath2Name[location.path()]: ''}}</title>
     <meta name="description" content="Sưởng đúc nhôm lớn nhất miền Bắc. Mang lại sự sang trọng cho công trình biệt thự nhà bạn.">
     <link rel="icon" href="assets/img/favicon.ico" type="image/gif" sizes="16x16">
 
@@ -31,8 +31,8 @@
 
     <!--Custom-->
     <style>[ng-cloak] {  display: none;  }</style>
-    <link rel="stylesheet" href="dist/application.css">
-    <!--<link rel="stylesheet" href="dist/application.min.css">-->
+    <!--<link rel="stylesheet" href="dist/application.css">-->
+    <link rel="stylesheet" href="dist/application.min.css">
 
 </head>
 <body ng-cloak>
@@ -65,8 +65,8 @@
 
 
 <!--Custom script-->
-<script src="dist/application.js"></script>
-<!--<script src="dist/application.min.js"></script>-->
+<!--<script src="dist/application.js"></script>-->
+<script src="dist/application.min.js"></script>
 
 
 </body>

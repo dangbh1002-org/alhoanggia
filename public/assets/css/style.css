@@ -81,28 +81,6 @@ h1.page-title {
 .edit:focus {
   outline: none;
 }
-h3 {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 5px;
-}
-h3 span {
-  border-bottom: 5px solid #800080;
-  transition: letter-spacing 1s ease;
-  -webkit-transition: letter-spacing 1s ease;
-  -moz-transition: letter-spacing 1s ease;
-  -o-transition: letter-spacing 1s ease;
-  -ms-transition: letter-spacing 1s ease;
-  -official-transition: letter-spacing 1s ease;
-}
-h3 span:hover {
-  letter-spacing: 1px;
-  transition: letter-spacing 1s ease;
-  -webkit-transition: letter-spacing 1s ease;
-  -moz-transition: letter-spacing 1s ease;
-  -o-transition: letter-spacing 1s ease;
-  -ms-transition: letter-spacing 1s ease;
-  -official-transition: letter-spacing 1s ease;
-}
 .product-group {
   position: relative;
   margin: 15px auto;
@@ -212,6 +190,7 @@ h3 span:hover {
   position: fixed;
   top: 0;
   left: 0 !important;
+  z-index: 999;
   -webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.14), 0px 0px 2px 2px rgba(0,0,0,0.098), 0px 0px 5px 1px rgba(0,0,0,0.084);
   -moz-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.14), 0px 0px 2px 2px rgba(0,0,0,0.098), 0px 0px 5px 1px rgba(0,0,0,0.084);
   box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.14), 0px 0px 2px 2px rgba(0,0,0,0.098), 0px 0px 5px 1px rgba(0,0,0,0.084);
@@ -394,14 +373,53 @@ md-dialog.productViewer {
 .productList {
   padding-bottom: 50px;
 }
-.AdminPage {
+.AdminController {
   background: url("/assets/img/adminBackground.png") !important;
 }
-.landing .step6 {
+.ProductController h3,
+.AdminController h3 {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 5px;
+}
+.ProductController h3 span,
+.AdminController h3 span {
+  border-bottom: 5px solid #800080;
+  transition: letter-spacing 1s ease;
+  -webkit-transition: letter-spacing 1s ease;
+  -moz-transition: letter-spacing 1s ease;
+  -o-transition: letter-spacing 1s ease;
+  -ms-transition: letter-spacing 1s ease;
+  -official-transition: letter-spacing 1s ease;
+}
+.ProductController h3 span:hover,
+.AdminController h3 span:hover {
+  letter-spacing: 1px;
+  transition: letter-spacing 1s ease;
+  -webkit-transition: letter-spacing 1s ease;
+  -moz-transition: letter-spacing 1s ease;
+  -o-transition: letter-spacing 1s ease;
+  -ms-transition: letter-spacing 1s ease;
+  -official-transition: letter-spacing 1s ease;
+}
+.HomeController h2 {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 5px;
+  font-size: 36px;
+  font-weight: 600;
+  color: #616161;
+}
+.HomeController h2 span {
+  border-bottom: 5px solid #800080;
+}
+.HomeController .step2 h2,
+.HomeController .step5 h2 {
+  border-bottom: 1px solid #ccc;
+}
+.HomeController .step6 {
   padding: 70px 0;
   background: #fff;
 }
-.landing .step6 .imgLarge {
+.HomeController .step6 .imgLarge {
   width: 240px;
   height: 240px;
   -webkit-border-radius: 50%;
@@ -411,7 +429,7 @@ md-dialog.productViewer {
   border-radius: 50%;
   z-index: 999;
 }
-.landing .step6 .imgSmall {
+.HomeController .step6 .imgSmall {
   width: 90px;
   height: 90px;
   -webkit-border-radius: 50%;
@@ -420,79 +438,80 @@ md-dialog.productViewer {
   -ms-border-radius: 50%;
   border-radius: 50%;
   overflow: hidden;
+  margin: 0 auto;
 }
-.landing .step6 .imgSmall img {
+.HomeController .step6 .imgSmall img {
   width: 100%;
 }
-.landing .step6 h4 {
+.HomeController .step6 h4 {
   font-size: 22px !important;
   font-weight: 700;
   color: #09a223;
   margin-bottom: 3px !important;
 }
-.landing .step6 .desc3 {
+.HomeController .step6 .desc3 {
   color: #616161;
   line-height: 17px;
 }
-.landing .step6 .desc2 {
+.HomeController .step6 .desc2 {
   padding: 15px 15px 15px 15px;
   border: 1px solid #bdbdbd;
   color: #999;
   font-size: larger;
 }
-.landing .step6 .line {
+.HomeController .step6 .line {
   width: 135px;
   border-bottom: 2px solid #09a223;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.landing .step5 {
+.HomeController .step5 {
   padding: 70px 0 !important;
   background: #e5e5e5;
 }
-.landing .step5 .mt-card-item {
+.HomeController .step5 .mt-card-item {
   background: #fff;
   -webkit-box-shadow: 0 1px 0 #b8b8b8;
   -moz-box-shadow: 0 1px 0 #b8b8b8;
   box-shadow: 0 1px 0 #b8b8b8;
 }
-.landing .step5 .mt-card-item h4 {
+.HomeController .step5 .mt-card-item h4 {
   font-size: 22px !important;
   color: #3c3d64;
   margin-bottom: 3px !important;
 }
-.landing .step5 .mt-card-item .mt-card-desc2 {
+.HomeController .step5 .mt-card-item .mt-card-desc2 {
   padding: 0 15px;
   color: #999;
   font-size: larger;
 }
-.landing .step4 {
+.HomeController .step4 {
   padding: 70px 0;
-  background: url("/assets/img/step4-001.jpg");
+  background: url("/assets/img/step4-002.jpg");
 }
-.landing .step3 {
+.HomeController .step3 {
   padding: 70px 0 0 0;
 }
-.landing .step3 .productGroup {
+.HomeController .step3 .productGroup {
   background: url("/assets/img/step3-010.jpg");
   padding: 50px 0;
 }
-.landing .step2 {
+.HomeController .step2 {
   padding: 70px 0;
   background: #e5e5e5;
 }
-.landing .step1 {
+.HomeController .step1 {
   padding: 70px 0;
 }
-.landing .step1 .stepIcon ul {
+.HomeController .step1 .stepIcon ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   margin-top: 30px;
 }
-.landing .step1 .stepIcon ul li {
+.HomeController .step1 .stepIcon ul li {
   text-align: center;
   width: 100px;
   height: 80px;
@@ -505,17 +524,17 @@ md-dialog.productViewer {
   margin: 5px;
   padding-top: 10px;
 }
-.landing .step1 .stepIcon ul li i {
+.HomeController .step1 .stepIcon ul li i {
   color: #09a223;
   font-size: 32px;
 }
-.landing .step1 .mt-overlay-2 {
+.HomeController .step1 .mt-overlay-2 {
   margin: 10px;
 }
-.landing .step1 .mt-overlay-2 img {
+.HomeController .step1 .mt-overlay-2 img {
   width: 100%;
 }
-.landing .stepHeader .stepNumber {
+.HomeController .stepHeader .stepNumber {
   background: #09a223;
   color: #fff;
   text-align: center;
@@ -531,32 +550,7 @@ md-dialog.productViewer {
   line-height: 120px;
   margin: auto;
 }
-.landing .stepHeader h2 {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 5px;
-  font-size: 36px;
-  font-weight: 600;
-  color: #616161;
-}
-.landing .stepHeader h2 span {
-  border-bottom: 5px solid #800080;
-  transition: letter-spacing 1s ease;
-  -webkit-transition: letter-spacing 1s ease;
-  -moz-transition: letter-spacing 1s ease;
-  -o-transition: letter-spacing 1s ease;
-  -ms-transition: letter-spacing 1s ease;
-  -official-transition: letter-spacing 1s ease;
-}
-.landing .stepHeader h2 span:hover {
-  letter-spacing: 1px;
-  transition: letter-spacing 1s ease;
-  -webkit-transition: letter-spacing 1s ease;
-  -moz-transition: letter-spacing 1s ease;
-  -o-transition: letter-spacing 1s ease;
-  -ms-transition: letter-spacing 1s ease;
-  -official-transition: letter-spacing 1s ease;
-}
-.landing .stepHeader p {
+.HomeController .stepHeader p {
   color: #777;
   font-style: italic;
   font-size: 18px;

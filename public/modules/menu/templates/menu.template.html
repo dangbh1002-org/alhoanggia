@@ -42,9 +42,6 @@
 
             <img ng-src="assets/img/favicon.ico" class="md-avatar" width="62px" height="62px" style="outline: none" s ng-click="setNavItem('/')">
 
-            <md-nav-item md-nav-click="goto('/')" name="/" ng-click="location.path('/')">
-                Trang chủ
-            </md-nav-item>
             <md-nav-item ng-repeat="item in menus" md-nav-click="goto" name="{{item.path}}" ng-click="location.path(item.path)">
                 {{item.name}}
             </md-nav-item>

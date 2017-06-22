@@ -5,8 +5,9 @@ angular.module('menu').directive('menuDirective',[function () {
         restrict: 'E',
         controller: ['$scope', '$rootScope', '$location', '$mdSidenav', '$mdMedia', function($scope, $rootScope, $location, $mdSidenav, $mdMedia) {
 
-            $scope.largeScreen = $mdMedia('gt-md');
+            $rootScope.largeScreen = $mdMedia('gt-md');
             $rootScope.menus = [
+                {code: 0, name: 'Trang chủ', path: '/', icon: '', color: '#4caf50'},
                 {code: 1, name: 'Cổng nhôm đúc', path: '/cong-nhom-duc', icon: '', color: '#4caf50'},
                 {code: 2, name: 'Hàng rào', path: '/hang-rao', icon: '', color: '#ef5350'},
                 {code: 3, name: 'Ban công', path: '/ban-cong', icon: '', color: '#a289ff'},
@@ -23,7 +24,7 @@ angular.module('menu').directive('menuDirective',[function () {
                 $scope.mapPath2Color[value.path] = value.color;
             });
 
-            $scope.setNavItem = function (path) {
+            $rootScope.setNavItem = function (path) {
                 setTimeout(function () {
                     $scope.$apply(function () {
                         $location.path(path);

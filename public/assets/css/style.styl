@@ -149,19 +149,6 @@ h1.page-title{
 }
 
 
-h3{
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 5px;
-  & span{
-    border-bottom: 5px solid purple;
-    transition letter-spacing 1s ease
-    &:hover{
-      letter-spacing 1px
-      transition letter-spacing 1s ease
-    }
-  }
-}
-
 .product-group{
   position: relative
   margin: 15px auto
@@ -252,6 +239,7 @@ h3{
   position fixed
   top 0
   left 0!important
+  z-index: 999
   box-shadow 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084)
   background purple
   ul{
@@ -445,12 +433,43 @@ md-dialog.productViewer{
 
 }
 
-.AdminPage{
+.AdminController{
   background url("/assets/img/adminBackground.png")!important
 }
 
+.ProductController
+.AdminController{
+  h3{
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+    & span{
+      border-bottom: 5px solid purple;
+      transition letter-spacing 1s ease
+      &:hover{
+        letter-spacing 1px
+        transition letter-spacing 1s ease
+      }
+    }
+  }
 
-.landing{
+}
+.HomeController{
+  h2{
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+    font-size 36px
+    font-weight 600
+    color rgba(97,97,97,1)
+    & span{
+      border-bottom: 5px solid purple;
+    }
+  }
+  .step2
+  .step5{
+    h2{
+      border-bottom: 1px solid #ccc;
+    }
+  }
   .step6{
     padding: 70px 0
     background white
@@ -465,6 +484,7 @@ md-dialog.productViewer{
       height 90px
       border-radius 50%
       overflow hidden
+      margin 0 auto
       img{
         width 100%
       }
@@ -514,7 +534,7 @@ md-dialog.productViewer{
   }
   .step4{
     padding: 70px 0
-    background url("/assets/img/step4-001.jpg")
+    background url("/assets/img/step4-002.jpg")
   }
   .step3{
     padding: 70px 0 0 0
@@ -571,21 +591,6 @@ md-dialog.productViewer{
       font-weight: 800;
       line-height 120px
       margin auto
-    }
-    h2{
-      border-bottom: 1px solid #e5e5e5;
-      padding-bottom: 5px;
-      font-size 36px
-      font-weight 600
-      color rgba(97,97,97,1)
-      & span{
-        border-bottom: 5px solid purple;
-        transition letter-spacing 1s ease
-        &:hover{
-          letter-spacing 1px
-          transition letter-spacing 1s ease
-        }
-      }
     }
     p{
       color #777

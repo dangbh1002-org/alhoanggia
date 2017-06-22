@@ -179,9 +179,6 @@ angular.module('admin').controller('AdminController', [
                     }).then(function(){
 
                         $scope.picFile = null;
-                        $scope.productName = null;
-                        $scope.productType = null;
-                        $scope.productPrice = null;
 
                         $mdToast.show(
                             $mdToast.simple()
